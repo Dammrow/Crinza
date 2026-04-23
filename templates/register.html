@@ -2,38 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Crinza</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .register-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media(max-width: 576px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+        form {
+            /* Pushing up margin just slightly to align with the header */
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container" style="padding: 4rem 0;">
-        <h2>Register Your Institute</h2>
+    <div class="register-wrapper">
+        <div class="form-container">
+            
+            <form action="/register" method="POST">
+                
+                <div class="form-header">
+                    <h2>Register Your Institute</h2>
+                    <p>Join Crinza and start building your digital education business today.</p>
+                </div>
 
-        <form action="/register" method="POST">
+                <label>Institute / Business Name</label>
+                <input type="text" name="business_name" required placeholder="e.g. Sai Edtech">
 
-            <label>Institute / Business Name</label>
-            <input type="text" name="business_name" required>
+                <label>Description</label>
+                <textarea name="description" required placeholder="Tell us a little bit about what you teach..."></textarea>
 
-            <label>Description</label>
-            <textarea name="description" required></textarea>
+                <div class="form-row">
+                    <div>
+                        <label>Contact Number</label>
+                        <input type="tel" name="phone" required placeholder="e.g. +91 9876543210">
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="email" name="email" required placeholder="hello@institute.com">
+                    </div>
+                </div>
 
-            <label>Contact Number</label>
-            <input type="tel" name="phone" required>
+                <div class="form-row">
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="city" required placeholder="e.g. Pune">
+                    </div>
+                    <div>
+                        <label>State (Optional)</label>
+                        <input type="text" name="state" placeholder="e.g. Maharashtra">
+                    </div>
+                </div>
 
-            <label>Email</label>
-            <input type="" name="email" required>
+                <button type="submit">Submit Registration</button>
 
-            <label>City</label>
-            <input type="text" name="city" required>
-
-            <label>State (Optional)</label>
-            <input type="text" name="state">
-
-            <button type="submit">Submit</button>
-
-        </form>
+            </form>
+        </div>
     </div>
 
 </body>
