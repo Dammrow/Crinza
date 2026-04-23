@@ -8,7 +8,7 @@
     <meta name="description"
         content="Join thousands of students learning online. Create, sell, and grow your knowledge with our modern platform.">
     <!-- CSS Dependencies -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
 </head>
@@ -31,7 +31,7 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact" class="btn btn-primary">Get Started</a></li>
+                <li><a href="/register-page" class="btn btn-primary">Get Started</a></li>
             </ul>
         </div>
     </nav>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/hero.png" alt="Student learning on laptop 3D illustration">
+                <img src="{{url_for('static', filename='assets/hero.png')}}" alt="Student learning on laptop 3D illustration">
             </div>
         </div>
     </section>
@@ -171,7 +171,7 @@
                         and growing with purpose."
                     </p>
                     <div class="testimonial-author">
-                        <img src="assets/test_one.png" alt="Sarah Johnson - Design Instructor" class="author-image">
+                        <img src="{{url_for('static', filename='assets/test_one.png')}}" alt="Sarah Johnson - Design Instructor" class="author-image">
                         <div class="author-info">
                             <h4>Sarah Johnson</h4>
                             <p>Design Instructor, 50k+ students</p>
@@ -186,7 +186,7 @@
                         without unnecessary complexity."
                     </p>
                     <div class="testimonial-author">
-                        <img src="assets/test_two.png" alt="David Chen - Coding Bootcamp Founder" class="author-image">
+                        <img src="{{ url_for('static', filename='assets/test_two.png') }}" alt="David Chen - Coding Bootcamp Founder" class="author-image">
                         <div class="author-info">
                             <h4>David Chen</h4>
                             <p>Coding Bootcamp Founder</p>
@@ -273,7 +273,7 @@
     </footer>
 
     <!-- App Scripts -->
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Crinza</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container" style="padding: 4rem 0;">
+        <h2>Register Your Institute</h2>
+
+        <form action="/register" method="POST">
+
+            <label>Institute / Business Name</label>
+            <input type="text" name="business_name" required>
+
+            <label>Description</label>
+            <textarea name="description" required></textarea>
+
+            <label>Contact Number</label>
+            <input type="tel" name="phone" required>
+
+            <label>Email</label>
+            <input type="" name="email" required>
+
+            <label>City</label>
+            <input type="text" name="city" required>
+
+            <label>State (Optional)</label>
+            <input type="text" name="state">
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
