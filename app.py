@@ -49,7 +49,7 @@ def register():
     ''', (business_name, description, phone, email, city, state))
     conn.commit()
     conn.close()
-
+    return render_template('success.html')
     try:
         if "@" not in email or "." not in email:
             return "Invalid email"
