@@ -7,47 +7,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .register-wrapper {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem 1rem;
-        }
-        .form-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .form-header h2 {
-            font-size: 2.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-        }
-        .form-header p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-        .form-container {
-            width: 100%;
-            max-width: 600px;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        @media(max-width: 576px) {
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-        }
-        form {
-            /* Pushing up margin just slightly to align with the header */
-            margin-top: 1rem;
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -65,7 +25,7 @@
                 <input type="text" name="business_name" required placeholder="e.g. Sai Edtech">
 
                 <label>Description</label>
-                <textarea name="description" required placeholder="Tell us a little bit about what you teach..."></textarea>
+                <textarea name="description" required placeholder="Tell us a little bit about what your business..."></textarea>
 
                 <div class="form-row">
                     <div>

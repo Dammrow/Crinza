@@ -41,6 +41,10 @@ def register():
     email= data.get('email')
     city= data.get('city')
     state= data.get('state')
+    if "@" not in email or "." not in email:
+        return "Invalid email"
+    if not phone.isdigit() or len(phone)!=10:
+        return "Invalid phone number"
     conn = sqlite3.connect('database.db')
     cursor=conn.cursor()
     cursor.execute('''
@@ -51,14 +55,11 @@ def register():
     conn.close()
     return render_template('success.html')
     try:
-        if "@" not in email or "." not in email:
-            return "Invalid email"
         server= smtplib.SMTP('smtp.gmail.com',587)
         server.starttls()
         server.login('dammrow112@gmail.com','uofh twtk mfee stni')
         message = f"""Subject: New Registration
         New Registration Received:
-
         Business Name: {business_name}
         Description: {description}
         Phone: {phone}
