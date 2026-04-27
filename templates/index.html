@@ -18,8 +18,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>Crinza</span>
+                <img src="{{url_for('static', filename='assets/logo.png')}}" alt="Logo">
             </a>
 
             <button class="hamburger" aria-label="Toggle menu">
@@ -40,7 +39,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Build Your Digital Education Business with Crinza</h1>
+                <h1>Build Your Digital Business with Crinza</h1>
                 <p class="hero-subtitle">
                     Empowering educators, coaches, and creators to grow, scale, and monetize their knowledge with
                     confidence.
@@ -52,7 +51,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="{{url_for('static', filename='assets/hero3.jpg')}}" alt="Student learning on laptop 3D illustration">
+                <img src="{{url_for('static', filename='assets/hero3.jpg')}}"
+                    alt="Student learning on laptop 3D illustration">
             </div>
         </div>
     </section>
@@ -171,7 +171,8 @@
                         and growing with purpose."
                     </p>
                     <div class="testimonial-author">
-                        <img src="{{url_for('static', filename='assets/test_one.png')}}" alt="Sarah Johnson - Design Instructor" class="author-image">
+                        <img src="{{url_for('static', filename='assets/test_one.png')}}"
+                            alt="Sarah Johnson - Design Instructor" class="author-image">
                         <div class="author-info">
                             <h4>Sarah Johnson</h4>
                             <p>Design Instructor, 50k+ students</p>
@@ -186,7 +187,8 @@
                         without unnecessary complexity."
                     </p>
                     <div class="testimonial-author">
-                        <img src="{{ url_for('static', filename='assets/test_two.png') }}" alt="David Chen - Coding Bootcamp Founder" class="author-image">
+                        <img src="{{ url_for('static', filename='assets/test_two.png') }}"
+                            alt="David Chen - Coding Bootcamp Founder" class="author-image">
                         <div class="author-info">
                             <h4>David Chen</h4>
                             <p>Coding Bootcamp Founder</p>
@@ -216,8 +218,9 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <span>Crinza</span>
+                        <a href="#" class="logo">
+                            <img src="{{url_for('static', filename='assets/logo.png')}}" alt="Logo">
+                        </a>
                     </div>
                     <p>
                         Empowering educators and creators to build their identity, grow their presence, and create

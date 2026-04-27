@@ -154,7 +154,7 @@ p {
 
 .btn-primary:hover {
     background: var(--primary-hover);
-    transform: translateY(-2px);
+    transform: scale(1.03);
     box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
     color: white;
 }
@@ -170,7 +170,7 @@ p {
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.9);
     border-color: rgba(255, 255, 255, 1);
-    transform: translateY(-2px);
+    transform: scale(1.03);
 }
 
 /* Navbar */
@@ -179,7 +179,7 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.473);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     z-index: 1000;
@@ -194,18 +194,16 @@ p {
     justify-content: space-between;
     align-items: center;
 }
-
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-main);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 }
 
-.logo i {
-    color: var(--primary);
+.logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+
 }
 
 .nav-links {
@@ -388,7 +386,8 @@ p {
 
 .step-content:hover {
     background: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(31, 38, 135, 0.1);
 }
 
 .step-content h3 {
@@ -416,6 +415,12 @@ p {
     position: relative;
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(31, 38, 135, 0.1);
 }
 
 .quote-icon {
@@ -511,7 +516,7 @@ p {
 
 /* Footer (Dark Glass) */
 .footer {
-    background: rgba(17, 24, 39, 0.8);
+    background: rgba(17, 34, 39, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     color: white;
@@ -536,9 +541,7 @@ p {
     margin-bottom: 1.5rem;
 }
 
-.footer-logo i {
-    color: #818cf8;
-}
+
 
 .footer-col p {
     color: #cbd5e1;
@@ -642,16 +645,16 @@ form textarea {
     font-family: inherit;
     font-size: 1rem;
     color: var(--text-main);
-    transition: var(--transition);
+    transition: all 0.3s ease;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.02);
 }
 
 form input:focus,
 form textarea:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 1);
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
 form textarea {
@@ -677,8 +680,20 @@ form button[type="submit"] {
 
 form button[type="submit"]:hover {
     background: var(--primary-hover);
-    transform: translateY(-2px);
+    transform: scale(1.03);
     box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsive Design */
@@ -738,7 +753,10 @@ form button[type="submit"]:hover {
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
         border-left: 1px solid rgba(255, 255, 255, 0.5);
     }
-
+    
+    .logo img {
+        height: 32px;
+    }
     .nav-links.active {
         right: 0;
     }
