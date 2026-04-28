@@ -194,6 +194,7 @@ p {
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     display: flex;
     align-items: center;
@@ -238,6 +239,11 @@ p {
 .hero {
     padding: 9rem 0 5rem;
     overflow: hidden;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.486), rgba(0, 0, 0, 0.4)),
+        url("/static/assets/hero.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero .container {
@@ -248,6 +254,7 @@ p {
 
 .hero-content {
     flex: 1;
+    color: white;
 }
 
 .hero-subtitle {
@@ -753,10 +760,11 @@ form button[type="submit"]:hover {
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
         border-left: 1px solid rgba(255, 255, 255, 0.5);
     }
-    
+
     .logo img {
         height: 32px;
     }
+
     .nav-links.active {
         right: 0;
     }
@@ -832,7 +840,7 @@ form button[type="submit"]:hover {
     align-items: center;
 
     background:
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url("/static/assets/register-bg.jfif");
 
     background-size: cover;

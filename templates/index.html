@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crinza — Turn Your Knowledge Into a Scalable Digital Business</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/favicon-32x32.png') }}">
     <link rel="icon" href="{{ url_for('static', filename='assets/favicon-16x16.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
     <meta name="description" content="Create, sell, and grow your knowledge with our modern platform.">
+    
     <!-- CSS Dependencies -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,8 +42,8 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Build Your Digital Business with Crinza</h1>
-                <p class="hero-subtitle">
+                <h1 style="color: white;">Build Your Digital Business with Crinza</h1>
+                <p class="hero-subtitle" style="color: rgb(206, 191, 191);">
                     Empowering educators, coaches, and creators to grow, scale, and monetize their knowledge with
                     confidence.
                 </p>
@@ -49,10 +52,6 @@
                     <a href="#features" class="btn btn-primary">Start Your Journey</a>
                     <a href="#how-it-works" class="btn btn-secondary">Explore Platform</a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="{{url_for('static', filename='assets/hero.jfif')}}"
-                    alt="Student learning on laptop 3D illustration">
             </div>
         </div>
     </section>
