@@ -2,7 +2,7 @@ from flask import request
 from flask import Flask, render_template
 import sqlite3
 import smtplib
-# import os
+import os
 
 app = Flask(__name__)
 
@@ -54,11 +54,13 @@ def register():
     ''', (business_name, description, phone, email, city, state))
     conn.commit()
     conn.close()
-    return render_template('success.html')
+
     try:
+        EMAIL = os.environ.get("EMAIL_USER")
+        PASSWORD = os.environ.get("EMAIL_PASS")
         server= smtplib.SMTP('smtp.gmail.com',587)
         server.starttls()
-        server.login('dammrow112@gmail.com','uofh twtk mfee stni')
+        server.login(EMAIL,PASSWORD)
         message = f"""Subject: New Registration
         New Registration Received:
         Business Name: {business_name}
@@ -69,16 +71,11 @@ def register():
         State: {state}
         """
 
-        server.sendmail('dammrow112@gmail.com', 'dammrow112@gmail.com', message)
+        server.sendmail(EMAIL,EMAIL, message)
         server.quit()
-        
     except Exception as e:
        print("email error:", e)
+    return render_template('success.html')
 
-    return 'Registration successfull'
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
-# if __name__ == '__main__':
-#     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
